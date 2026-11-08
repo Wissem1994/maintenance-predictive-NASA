@@ -1,0 +1,118 @@
+{
+  "version": "ai4i-rf-calibrated-v1",
+  "algorithm": "Random Forest + calibration sigmoïde",
+  "task": "current_state_classification",
+  "trained_at": "2026-11-07T21:31:23.730651+00:00",
+  "provenance": {
+    "dataset": "ai4i_2020",
+    "type": "synthetic",
+    "source": "https://archive.ics.uci.edu/static/public/601/ai4i+2020+predictive+maintenance+dataset.zip",
+    "source_sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+    "rows": 10000
+  },
+  "features": [
+    "Type",
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]"
+  ],
+  "threshold": 0.5,
+  "metrics": {
+    "precision": 0.7931034482758621,
+    "recall": 0.5897435897435898,
+    "f1": 0.6764705882352942,
+    "pr_auc": 0.6707060552710052,
+    "brier_score": 0.009823830046156928
+  },
+  "confusion_matrix": [
+    [
+      1955,
+      6
+    ],
+    [
+      16,
+      23
+    ]
+  ],
+  "baseline_metrics": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "pr_auc": 0.0195,
+    "brier_score": 0.019648750000000003,
+    "confusion_matrix": [
+      [
+        1961,
+        0
+      ],
+      [
+        39,
+        0
+      ]
+    ]
+  },
+  "calibration_curve": {
+    "predicted": [
+      0.005941181521628043,
+      0.28821593851821586,
+      0.5496059197275123,
+      0.7149097407516782,
+      0.916044141098382
+    ],
+    "observed": [
+      0.006656426011264721,
+      0.16666666666666666,
+      0.5714285714285714,
+      0.6666666666666666,
+      0.9375
+    ]
+  },
+  "split": {
+    "method": "UDI ordonnés 60/20/20 ; entraînement, calibration et test disjoints",
+    "train_rows": 6000,
+    "calibration_rows": 2000,
+    "test_rows": 2000
+  },
+  "configuration": {
+    "n_estimators": 200,
+    "random_state": 42,
+    "classification_threshold": 0.5
+  },
+  "limitations": [
+    "Dataset entièrement synthétique, distinct des vibrations NASA et du simulateur local.",
+    "Cible : machine en panne sur cette ligne ; aucun horizon futur ni RUL.",
+    "Ordre UDI conservé, sans prétendre disposer d'horodatages ni d'identités réelles de machines.",
+    "Calibration et métriques évaluées uniquement dans le domaine synthétique AI4I.",
+    "Les cinq modes de panne et les identifiants sont exclus des entrées pour éviter la fuite de cible.",
+    "Probabilités jamais appliquées aux machines NASA ou au simulateur."
+  ],
+  "score_histogram": {
+    "counts": [
+      1943,
+      10,
+      11,
+      7,
+      0,
+      7,
+      3,
+      3,
+      4,
+      12
+    ],
+    "edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.6000000000000001,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+Simulation SYNTHETIQUE : 20 machines, 3 cycles nominaux
+{
+  "alert_id": 6,
+  "reused_existing_alert": false,
+  "triggered_values": {
+    "value": 0.7335254441550516,
+    "threshold": 0.5608368102566361,
+    "persistence": 3,
+    "industrial_validation": false
+  },
+  "maintenance_id": 4
+}
+Historique et intervention conserves dans SQLite.

@@ -1,0 +1,9 @@
+{
+  "2nd_test": {
+    "files": 984,
+    "first": "2004-02-12T10:32:39",
+    "last": "2004-02-19T06:22:39",
+    "median_interval_s": 600.0,
+    "max_interval_s": 600.0
+  }
+}

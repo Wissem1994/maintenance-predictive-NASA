@@ -1,0 +1,374 @@
+[
+  {
+    "version": "nasa-2nd_test-ch1-a69bddf1dc",
+    "algorithm": "IsolationForest + baseline robuste MAD",
+    "provenance": {
+      "dataset": "nasa_ims",
+      "type": "experimental_historical",
+      "trial": "2nd_test",
+      "channel": 1,
+      "features_sha256": "a69bddf1dc09196d7a0ed5fffb59f13ae21d92c19515c6205247fefd0ac76eda"
+    },
+    "trained_at": "2026-11-07T21:08:51.022540+00:00",
+    "features": [
+      "rms",
+      "std",
+      "kurtosis",
+      "skewness",
+      "peak_to_peak",
+      "crest_factor",
+      "band_low",
+      "band_mid",
+      "band_high"
+    ],
+    "configuration": {
+      "n_estimators": 150,
+      "random_state": 42,
+      "calibration_quantile": 0.99
+    },
+    "split": {
+      "method": "chronologique par fichier, 20/10/70 ; aucune fenêtre du même fichier partagée",
+      "training_end": "2004-02-13T19:02:39",
+      "calibration_end": "2004-02-14T11:32:39",
+      "train_rows": 196,
+      "calibration_rows": 99,
+      "test_rows": 689
+    },
+    "threshold": 0.5320080078082337,
+    "metrics": {
+      "heldout_anomaly_fraction": 0.6734397677793904,
+      "baseline_exceedance_fraction": 0.6502177068214804,
+      "test_score_min": 0.37218380734451795,
+      "test_score_max": 0.7706658622913232,
+      "test_score_median": 0.6490113915607101,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "pr_auc": null,
+      "false_alarms_per_hour": null,
+      "detection_lead_time_hours": null,
+      "calibration_error": null
+    },
+    "score_histogram": {
+      "counts": [
+        43,
+        93,
+        57,
+        24,
+        13,
+        14,
+        41,
+        48,
+        34,
+        56,
+        141,
+        125
+      ],
+      "edges": [
+        0.37218380734451795,
+        0.4053906452567517,
+        0.4385974831689855,
+        0.4718043210812193,
+        0.5050111589934531,
+        0.5382179969056868,
+        0.5714248348179205,
+        0.6046316727301544,
+        0.6378385106423881,
+        0.671045348554622,
+        0.7042521864668556,
+        0.7374590243790895,
+        0.7706658622913232
+      ]
+    },
+    "limitations": [
+      "Début d'essai supposé nominal, sans confirmation d'absence de défaut latent.",
+      "Holdout du même essai : aucune validation de généralisation sur nouvelle machine.",
+      "Absence d'étiquettes par fichier : precision/recall/PR-AUC et faux positifs non calculables.",
+      "Score élevé = atypique par rapport au début de cet essai ; pas une probabilité de panne.",
+      "Seuil empirique de démonstration, non validé industriellement."
+    ],
+    "runtime": {
+      "python": "3.12.13",
+      "sklearn": "1.6.1"
+    }
+  },
+  {
+    "version": "nasa-2nd_test-ch2-a69bddf1dc",
+    "algorithm": "IsolationForest + baseline robuste MAD",
+    "provenance": {
+      "dataset": "nasa_ims",
+      "type": "experimental_historical",
+      "trial": "2nd_test",
+      "channel": 2,
+      "features_sha256": "a69bddf1dc09196d7a0ed5fffb59f13ae21d92c19515c6205247fefd0ac76eda"
+    },
+    "trained_at": "2026-11-07T21:08:51.569377+00:00",
+    "features": [
+      "rms",
+      "std",
+      "kurtosis",
+      "skewness",
+      "peak_to_peak",
+      "crest_factor",
+      "band_low",
+      "band_mid",
+      "band_high"
+    ],
+    "configuration": {
+      "n_estimators": 150,
+      "random_state": 42,
+      "calibration_quantile": 0.99
+    },
+    "split": {
+      "method": "chronologique par fichier, 20/10/70 ; aucune fenêtre du même fichier partagée",
+      "training_end": "2004-02-13T19:02:39",
+      "calibration_end": "2004-02-14T11:32:39",
+      "train_rows": 196,
+      "calibration_rows": 99,
+      "test_rows": 689
+    },
+    "threshold": 0.536292957808745,
+    "metrics": {
+      "heldout_anomaly_fraction": 0.532656023222061,
+      "baseline_exceedance_fraction": 0.22351233671988388,
+      "test_score_min": 0.3779885480570236,
+      "test_score_max": 0.7523298769528043,
+      "test_score_median": 0.5461813203538747,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "pr_auc": null,
+      "false_alarms_per_hour": null,
+      "detection_lead_time_hours": null,
+      "calibration_error": null
+    },
+    "score_histogram": {
+      "counts": [
+        30,
+        45,
+        69,
+        84,
+        90,
+        76,
+        62,
+        63,
+        70,
+        63,
+        30,
+        7
+      ],
+      "edges": [
+        0.3779885480570236,
+        0.4091836587983386,
+        0.4403787695396537,
+        0.47157388028096875,
+        0.5027689910222838,
+        0.5339641017635989,
+        0.565159212504914,
+        0.596354323246229,
+        0.627549433987544,
+        0.6587445447288591,
+        0.6899396554701742,
+        0.7211347662114893,
+        0.7523298769528043
+      ]
+    },
+    "limitations": [
+      "Début d'essai supposé nominal, sans confirmation d'absence de défaut latent.",
+      "Holdout du même essai : aucune validation de généralisation sur nouvelle machine.",
+      "Absence d'étiquettes par fichier : precision/recall/PR-AUC et faux positifs non calculables.",
+      "Score élevé = atypique par rapport au début de cet essai ; pas une probabilité de panne.",
+      "Seuil empirique de démonstration, non validé industriellement."
+    ],
+    "runtime": {
+      "python": "3.12.13",
+      "sklearn": "1.6.1"
+    }
+  },
+  {
+    "version": "nasa-2nd_test-ch3-a69bddf1dc",
+    "algorithm": "IsolationForest + baseline robuste MAD",
+    "provenance": {
+      "dataset": "nasa_ims",
+      "type": "experimental_historical",
+      "trial": "2nd_test",
+      "channel": 3,
+      "features_sha256": "a69bddf1dc09196d7a0ed5fffb59f13ae21d92c19515c6205247fefd0ac76eda"
+    },
+    "trained_at": "2026-11-07T21:08:56.959634+00:00",
+    "features": [
+      "rms",
+      "std",
+      "kurtosis",
+      "skewness",
+      "peak_to_peak",
+      "crest_factor",
+      "band_low",
+      "band_mid",
+      "band_high"
+    ],
+    "configuration": {
+      "n_estimators": 150,
+      "random_state": 42,
+      "calibration_quantile": 0.99
+    },
+    "split": {
+      "method": "chronologique par fichier, 20/10/70 ; aucune fenêtre du même fichier partagée",
+      "training_end": "2004-02-13T19:02:39",
+      "calibration_end": "2004-02-14T11:32:39",
+      "train_rows": 196,
+      "calibration_rows": 99,
+      "test_rows": 689
+    },
+    "threshold": 0.5970621349020186,
+    "metrics": {
+      "heldout_anomaly_fraction": 0.193033381712627,
+      "baseline_exceedance_fraction": 0.18287373004354138,
+      "test_score_min": 0.39104710213473876,
+      "test_score_max": 0.7469135450493543,
+      "test_score_median": 0.5183960387751472,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "pr_auc": null,
+      "false_alarms_per_hour": null,
+      "detection_lead_time_hours": null,
+      "calibration_error": null
+    },
+    "score_histogram": {
+      "counts": [
+        19,
+        53,
+        99,
+        135,
+        119,
+        86,
+        47,
+        26,
+        34,
+        53,
+        11,
+        7
+      ],
+      "edges": [
+        0.39104710213473876,
+        0.42070263904429006,
+        0.4503581759538413,
+        0.4800137128633926,
+        0.5096692497729439,
+        0.5393247866824953,
+        0.5689803235920465,
+        0.5986358605015978,
+        0.628291397411149,
+        0.6579469343207004,
+        0.6876024712302518,
+        0.717258008139803,
+        0.7469135450493543
+      ]
+    },
+    "limitations": [
+      "Début d'essai supposé nominal, sans confirmation d'absence de défaut latent.",
+      "Holdout du même essai : aucune validation de généralisation sur nouvelle machine.",
+      "Absence d'étiquettes par fichier : precision/recall/PR-AUC et faux positifs non calculables.",
+      "Score élevé = atypique par rapport au début de cet essai ; pas une probabilité de panne.",
+      "Seuil empirique de démonstration, non validé industriellement."
+    ],
+    "runtime": {
+      "python": "3.12.13",
+      "sklearn": "1.6.1"
+    }
+  },
+  {
+    "version": "nasa-2nd_test-ch4-a69bddf1dc",
+    "algorithm": "IsolationForest + baseline robuste MAD",
+    "provenance": {
+      "dataset": "nasa_ims",
+      "type": "experimental_historical",
+      "trial": "2nd_test",
+      "channel": 4,
+      "features_sha256": "a69bddf1dc09196d7a0ed5fffb59f13ae21d92c19515c6205247fefd0ac76eda"
+    },
+    "trained_at": "2026-11-07T21:08:57.522097+00:00",
+    "features": [
+      "rms",
+      "std",
+      "kurtosis",
+      "skewness",
+      "peak_to_peak",
+      "crest_factor",
+      "band_low",
+      "band_mid",
+      "band_high"
+    ],
+    "configuration": {
+      "n_estimators": 150,
+      "random_state": 42,
+      "calibration_quantile": 0.99
+    },
+    "split": {
+      "method": "chronologique par fichier, 20/10/70 ; aucune fenêtre du même fichier partagée",
+      "training_end": "2004-02-13T19:02:39",
+      "calibration_end": "2004-02-14T11:32:39",
+      "train_rows": 196,
+      "calibration_rows": 99,
+      "test_rows": 689
+    },
+    "threshold": 0.5478969205437982,
+    "metrics": {
+      "heldout_anomaly_fraction": 0.47750362844702465,
+      "baseline_exceedance_fraction": 0.40783744557329465,
+      "test_score_min": 0.36780507741627494,
+      "test_score_max": 0.7687145616577367,
+      "test_score_median": 0.538301989757396,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "pr_auc": null,
+      "false_alarms_per_hour": null,
+      "detection_lead_time_hours": null,
+      "calibration_error": null
+    },
+    "score_histogram": {
+      "counts": [
+        73,
+        98,
+        83,
+        51,
+        31,
+        57,
+        67,
+        77,
+        73,
+        36,
+        31,
+        12
+      ],
+      "edges": [
+        0.36780507741627494,
+        0.40121420110306344,
+        0.4346233247898519,
+        0.4680324484766404,
+        0.5014415721634289,
+        0.5348506958502173,
+        0.5682598195370059,
+        0.6016689432237943,
+        0.6350780669105828,
+        0.6684871905973713,
+        0.7018963142841597,
+        0.7353054379709483,
+        0.7687145616577367
+      ]
+    },
+    "limitations": [
+      "Début d'essai supposé nominal, sans confirmation d'absence de défaut latent.",
+      "Holdout du même essai : aucune validation de généralisation sur nouvelle machine.",
+      "Absence d'étiquettes par fichier : precision/recall/PR-AUC et faux positifs non calculables.",
+      "Score élevé = atypique par rapport au début de cet essai ; pas une probabilité de panne.",
+      "Seuil empirique de démonstration, non validé industriellement."
+    ],
+    "runtime": {
+      "python": "3.12.13",
+      "sklearn": "1.6.1"
+    }
+  }
+]

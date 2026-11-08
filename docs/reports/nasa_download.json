@@ -1,0 +1,13 @@
+{
+  "source": "https://phm-datasets.s3.amazonaws.com/NASA/4.+Bearings.zip",
+  "downloaded_on": "2026-11-07",
+  "bytes": 1075597174,
+  "sha256": "21001ac266c465f5d345ec42d7b508c6a6328487fd9d4d7774422dd5ea10ad83",
+  "extracted_trials": [
+    "2nd_test"
+  ],
+  "original_readme": {
+    "file": "Readme Document for IMS Bearing Data.pdf",
+    "sha256": "cf46d37c21f7f292c11bbbdd4695d876c417ed1d6425e3d87c962ae2182ae6ed"
+  }
+}

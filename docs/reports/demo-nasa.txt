@@ -1,0 +1,13 @@
+NASA : derniers fichiers REELS de l'essai 2 ; temps historique accelere x60
+{
+  "alert_id": 4,
+  "reused_existing_alert": true,
+  "triggered_values": {
+    "value": 0.7253620899106338,
+    "threshold": 0.5320080078082337,
+    "persistence": 3,
+    "industrial_validation": false
+  },
+  "maintenance_id": 3
+}
+Historique et intervention conserves dans SQLite.

@@ -1,0 +1,74 @@
+{
+  "verified_at": "2026-11-07T21:47:55.251797+00:00",
+  "platform": "Windows 10; Python 3.12.13; Node 26.13.0",
+  "backend": {
+    "command": "python -m pytest -q",
+    "passed": 19,
+    "failed": 0,
+    "warnings": [
+      "AnyIO/Starlette deprecation in TestClient"
+    ]
+  },
+  "frontend": {
+    "command": "npm.cmd test",
+    "passed": 3,
+    "failed": 0
+  },
+  "browser": {
+    "command": "npm.cmd run e2e",
+    "passed": 2,
+    "failed": 0,
+    "browser": "installed Microsoft Edge, headless",
+    "flows": [
+      "NASA signal/FFT and separate AI4I metrics",
+      "NASA replay/inference/pause/stop; 20 synthetic machines; fresh alert; acknowledge; maintenance; responsive screenshots"
+    ]
+  },
+  "quality": {
+    "ruff": "passed",
+    "mypy": "passed, 27 source files",
+    "typescript": "passed",
+    "vite_build": "passed",
+    "alembic_check": "No new upgrade operations detected",
+    "local_documentation_links": "no broken links"
+  },
+  "build_warning": {
+    "charts_chunk_kb": 560.81,
+    "charts_gzip_kb": 159.27
+  },
+  "datasets": {
+    "nasa_ims": {
+      "files": 984,
+      "channels": 4,
+      "feature_rows": 3936,
+      "trained_detectors": 4
+    },
+    "ai4i": {
+      "rows": 10000,
+      "test_rows": 2000,
+      "classification": "present synthetic failure state"
+    },
+    "paderborn": "not imported"
+  },
+  "automatic_demo": {
+    "nasa": {
+      "passed": true,
+      "alert_id": 4,
+      "reused_existing_alert": true,
+      "maintenance_id": 3
+    },
+    "simulation": {
+      "passed": true,
+      "new_alert_id": 6,
+      "maintenance_id": 4
+    }
+  },
+  "not_verified": [
+    "Linux/macOS scripts",
+    "PostgreSQL",
+    "Docker engine",
+    "Paderborn fault classifier",
+    "industrial deployment"
+  ],
+  "industrial_validation": false
+}

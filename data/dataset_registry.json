@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-11-07",
+  "datasets": [
+    {
+      "id": "nasa_ims",
+      "origin": "experimental_historical",
+      "source": "https://data.nasa.gov/dataset/ims-bearings",
+      "mirror": "https://data.phmsociety.org/nasa/",
+      "version": "archive PHM Last-Modified 2022-09-18; SHA256 in docs/reports/nasa_download.json",
+      "download_date": "2026-11-07",
+      "license": {
+        "portal": "other-license-specified",
+        "url": "https://www.usa.gov/government-works",
+        "note": "Données universitaires distribuées par NASA ; conserver attribution IMS/Rexnord et notices d’archive. Ne pas inférer CC0."
+      },
+      "description": "Essais de roulements jusqu’à défaillance ; quatre roulements sur arbre commun.",
+      "units": {
+        "amplitude": "unité du signal source non vérifiée ; aucune conversion en mm/s",
+        "sample_rate": "Hz",
+        "nominal_rig_speed": "2000 tr/min, paramètre du banc, pas une mesure par fichier"
+      },
+      "variables": [
+        "amplitude vibratoire, 8 canaux essai 1 ; 4 canaux essais 2 et 3",
+        "horodatage dans le nom de fichier, fuseau inconnu"
+      ],
+      "preprocessing": [
+        "rejet des NaN/Inf et formats non conformes",
+        "fenêtres sans remplissage artificiel",
+        "RMS brut ; FFT avec retrait moyenne et Hann",
+        "SHA256 par fichier ; mapping essai/canal/roulement"
+      ],
+      "limitations": [
+        "absence de température/couple/charge mesurés dans les fichiers ASCII",
+        "pas d’étiquettes de défaut par fenêtre ; pas de temps précis de début de panne",
+        "20 kHz documentés, 20480 points soit 1.024 s",
+        "essai 3 : document annonce 4448 fichiers ; vérifier le contenu effectif lors de son import"
+      ],
+      "local_status": "essai 2 complet : 984 fichiers, 3936 observations canal/fichier ; essais 1 et 3 dans l’archive compressée"
+    },
+    {
+      "id": "paderborn",
+      "origin": "experimental",
+      "source": "https://mb.uni-paderborn.de/en/kat/research/bearing-datacenter",
+      "version": null,
+      "download_date": null,
+      "license": {
+        "name": "CC BY-NC 4.0",
+        "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "conditions": "Attribution ; non commercial ; contacter les auteurs pour usage commercial."
+      },
+      "description": "Vibrations et courants moteur, conditions et défauts documentés.",
+      "variables": [
+        "vibrations",
+        "courants",
+        "vitesse",
+        "couple",
+        "charge radiale",
+        "température"
+      ],
+      "units": "À lire dans les métadonnées et le journal du lot importé.",
+      "preprocessing": [],
+      "limitations": [
+        "non importé, aucun classifieur de défauts entraîné",
+        "séparer essais et roulements avant fenêtrage ; ne pas fusionner avec NASA"
+      ],
+      "local_status": "non importé"
+    },
+    {
+      "id": "ai4i_2020",
+      "origin": "synthetic",
+      "source": "https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset",
+      "version": "2020 ; DOI 10.24432/C5HS5C",
+      "download_date": "2026-11-07",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "description": "Dataset tabulaire synthétique complémentaire ; pas de vibrations réelles.",
+      "units": {
+        "temperature": "K",
+        "speed": "rpm",
+        "torque": "Nm",
+        "tool_wear": "min"
+      },
+      "variables": [
+        "type",
+        "air temperature",
+        "process temperature",
+        "rotational speed",
+        "torque",
+        "tool wear",
+        "machine failure",
+        "modes de défaillance"
+      ],
+      "preprocessing": [
+        "six variables explicatives, modes de panne et identifiants exclus",
+        "split ordonne UDI 60/20/20, calibration disjointe"
+      ],
+      "limitations": [
+        "synthetique uniquement, classification de panne presente sans horizon futur",
+        "probabilites non appliquees a NASA ou au simulateur"
+      ],
+      "local_status": "10000 lignes importees ; modele Random Forest calibre entraine",
+      "source_sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e"
+    },
+    {
+      "id": "industrial_simulation",
+      "origin": "synthetic",
+      "source": "simulation/industrial.py",
+      "version": "generator-v1",
+      "license": {
+        "name": "code du projet, aucune licence de données tierces"
+      },
+      "description": "Démonstration configurable à graine fixée, jusqu’à 20 machines.",
+      "units": {
+        "vibration": "g synthétique",
+        "temperature": "°C synthétique",
+        "speed": "tr/min synthétique",
+        "torque": "Nm synthétique",
+        "load": "% synthétique"
+      },
+      "variables": [
+        "vibration",
+        "temperature",
+        "speed_rpm",
+        "torque_nm",
+        "load_pct",
+        "operating_state"
+      ],
+      "preprocessing": [
+        "caractéristiques identiques au pipeline NASA, sans mélanger les observations"
+      ],
+      "limitations": [
+        "hypothèses simplifiées, pas un jumeau numérique validé",
+        "détecteur nominal distinct des modèles NASA"
+      ],
+      "local_status": "disponible"
+    }
+  ]
+}
